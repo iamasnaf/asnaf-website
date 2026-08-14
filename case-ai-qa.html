@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing what nobody has tested before — Mohammadasnaf Shaikh</title>
+<meta name="description" content="Building a repeatable QA practice for AI-assisted product features at DocuPet: prompt harnesses, edge-case corpora, and pass criteria for non-deterministic output.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <nav class="nav-inner" aria-label="Main">
+    <a class="nav-name" href="index.html">Mohammadasnaf Shaikh</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a class="nav-cta" href="index.html#contact">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="case-hero wrap">
+    <p class="mono dim" style="margin:0">DocuPet · 2025–present · Web / AI</p>
+    <h1>Testing what nobody has tested before</h1>
+    <p class="lede">The product started shipping AI-assisted features, and every method in the existing test suite assumed the same input produces the same output. I built the harness, the scenario corpus and the pass criteria that made those features releasable on a schedule.</p>
+  </section>
+
+  <section class="wrap case-body">
+
+    <h2>Context</h2>
+    <p>DocuPet's regression suite was in good shape — a Playwright suite in CI, results on every pull request, a defect process that worked. Then AI-assisted features entered the roadmap and the suite had no answer for them. An assertion that expects an exact string fails on a rephrasing that is entirely correct, and passes on an answer that is fluent and wrong.</p>
+    <p>The default response on most teams is one of two failures: skip automated coverage entirely and rely on someone reading outputs before release, or write brittle string assertions that get muted within two sprints. Neither survives contact with a release cadence.</p>
+
+    <h2>The problem</h2>
+    <p>Stated as a cost: without a defined pass criterion, no one could say whether a prompt change had made the feature better or worse. Release decisions came down to whoever had looked at the output most recently. That is unreviewable, unrepeatable, and it does not scale past one feature.</p>
+
+    <h2>What I built</h2>
+    <p>Three pieces, each solving one part of the problem.</p>
+
+    <p><strong>A fixed harness.</strong> Model version, temperature, system prompt and retrieved context all pinned per test run. If output changed, exactly one thing had changed — otherwise the result is noise and the team learns to ignore it.</p>
+
+    <p><strong>An edge-case scenario library.</strong> A maintained corpus of inputs grouped by the failure they provoke: ambiguity, adversarial phrasing, empty and overlong input, out-of-scope requests, and domain-specific cases particular to the product. Every production issue added a case. The corpus is the institutional memory of everything that has gone wrong.</p>
+
+    <p><strong>Property-based pass criteria.</strong> Instead of asserting on text, assert on properties the output must hold regardless of phrasing — schema validity, no entities that weren't in the input, refusal behaviour on out-of-scope requests, length and tone within range. Then a threshold across the corpus, agreed with the product owner in advance, that gates the merge.</p>
+
+    <p class="mono dim" style="margin:40px 0 16px">Assertion pattern — sanitized</p>
+<pre class="artifact"><span class="k">scenario:</span>  user submits an ambiguous request
+<span class="k">fixture:</span>   locked model version, temperature, system prompt
+<span class="k">input:</span>     corpus/ambiguous/*.json          (48 cases)
+
+<span class="k">assert</span> response.schema            <span class="ok">valid</span>
+<span class="k">assert</span> response.entities ⊆ input.entities
+<span class="k">assert</span> response.contains_refusal  when input.out_of_scope
+<span class="k">assert</span> response.length            within 1..3 sentences
+<span class="k">assert</span> response.tone              in [neutral, helpful]
+
+<span class="k">gate:</span>      ≥ 46 / 48 pass  →  <span class="ok">promote</span>
+           &lt; 46 / 48 pass  →  block merge, diff vs baseline</pre>
+
+    <div class="todo">
+      <p class="mono" style="margin-bottom:8px">To add before publishing</p>
+      <p class="small">Replace the block above with a real sanitized template or checklist from your own work, and add the specifics: how many scenarios in the corpus, which features it covers, what the agreed threshold actually is. One real artifact is worth more than three paragraphs of description — this is the single highest-value edit on the whole site.</p>
+    </div>
+
+    <h2>Result</h2>
+    <ul>
+      <li>Prompt changes became reviewable. A pull request that alters a prompt now produces a diff against a baseline instead of an opinion.</li>
+      <li>The release conversation changed from "does this look right to you" to "it passes at the agreed threshold, here are the two cases that regressed".</li>
+      <li>The scenario corpus became a shared artifact — product and engineering contribute cases, not just QA.</li>
+    </ul>
+
+    <div class="todo">
+      <p class="mono" style="margin-bottom:8px">To add before publishing</p>
+      <p class="small">Add one quantified outcome if you have it — cases in the corpus, features covered, issues caught pre-release. If you don't have a number, keep the qualitative claims; they're specific enough to hold up in an interview.</p>
+    </div>
+
+    <h2>Stack</h2>
+    <p class="mono dim">Playwright · TypeScript · Prompt engineering · Context engineering · LLM output validation · Jira / Xray · Sentry</p>
+
+    <div class="cta-block">
+      <h2>Want this for your team?</h2>
+      <p>I'm open to Senior QA and QA Lead roles in Hamilton, Toronto, or remote.</p>
+      <p style="margin-top:24px"><a class="btn" href="mailto:asnafshaikhpro@gmail.com">Get in touch</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="panel footer">
+  <div class="footer-inner">
+    <p class="mono" style="margin:0">© 2026 Mohammadasnaf Shaikh</p>
+    <p class="mono" style="margin:0"><a href="index.html" style="text-decoration:none">← All work</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zero to daily CI in one quarter — Mohammadasnaf Shaikh</title>
+<meta name="description" content="Building an automation framework, CI pipeline and self-serve reporting layer from an empty repo at Prodly.co — cutting manual regression effort by 60%.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <nav class="nav-inner" aria-label="Main">
+    <a class="nav-name" href="index.html">Mohammadasnaf Shaikh</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a class="nav-cta" href="index.html#contact">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="case-hero wrap">
+    <p class="mono dim" style="margin:0">Prodly.co · 2022–2025 · Web / API</p>
+    <h1>Zero to daily CI in one quarter</h1>
+    <p class="lede">I joined a product with no automated tests and a regression pass that consumed a week of manual effort before every release. I built the framework, the pipeline and the reporting layer from an empty repository.</p>
+  </section>
+
+  <section class="wrap case-body">
+
+    <h2>Context</h2>
+    <p>Prodly builds deployment and data-management tooling for Salesforce — a domain where the application under test is itself highly configurable, so the same feature behaves differently across org configurations. Coverage was entirely manual, and the regression checklist grew with every release while the time available to run it did not.</p>
+
+    <h2>The problem</h2>
+    <p>The cost was not just the week of manual effort. It was that regression only ran at the end, so defects were found at the point where fixing them was most expensive, and the checklist quietly shrank under deadline pressure. Nobody could say what coverage actually existed.</p>
+
+    <h2>What I built</h2>
+    <p><strong>The framework.</strong> Playwright and Cypress in TypeScript and JavaScript, structured so that Salesforce org configuration is a parameter rather than a hardcoded assumption. Page objects and fixtures were designed around the product's own vocabulary so that a test reads like the feature it covers, which is what keeps a suite maintainable after the person who wrote it leaves.</p>
+
+    <p><strong>The pipeline.</strong> Daily CI execution, with the suite structured into fast smoke and full regression tiers so that feedback arrived at a useful speed rather than all at once.</p>
+
+    <p><strong>The reporting layer.</strong> This is the part that changed the team's relationship with QA. I deployed an Allure reporting pipeline hosted on AWS S3, giving every stakeholder a self-serve HTML dashboard of execution trends, flakiness patterns and coverage gaps. Before it existed, QA status was something people asked me for. After it, it was a link.</p>
+
+    <p><strong>Supporting work.</strong> API validation of REST endpoints via Postman and Swagger — data correctness, response-time SLAs and error boundary behaviour. Datadog for log monitoring and DBeaver for SQL validation, confirming backend state matched what the UI displayed. I also served as Salesforce System Admin within QA, provisioning test environments and validating data migration accuracy.</p>
+
+    <div class="todo">
+      <p class="mono" style="margin-bottom:8px">To add before publishing</p>
+      <p class="small">Add a screenshot of the Allure dashboard (redact client names and any org data) and a simple architecture sketch of the framework layers. These two images do more work than any paragraph on this page.</p>
+    </div>
+
+    <h2>Result</h2>
+    <ul>
+      <li>More than 60% of manual regression effort eliminated, from a zero-automation baseline.</li>
+      <li>Daily CI execution replaced end-of-cycle manual passes, moving defect discovery earlier where it is cheapest to act on.</li>
+      <li>The first self-serve QA dashboard in the company — reports stopped being distributed by hand, and stakeholder trust in QA metrics went up because the numbers were always current.</li>
+      <li>Part of 200+ automated test cases authored across regression, integration and end-to-end suites.</li>
+    </ul>
+
+    <h2>Stack</h2>
+    <p class="mono dim">Playwright · Cypress · TypeScript · JavaScript · GitHub Actions · AWS S3 · Allure · Postman · Swagger · Datadog · DBeaver · Salesforce</p>
+
+    <div class="cta-block">
+      <h2>Want this for your team?</h2>
+      <p>I'm open to Senior QA and QA Lead roles in Hamilton, Toronto, or remote.</p>
+      <p style="margin-top:24px"><a class="btn" href="mailto:asnafshaikhpro@gmail.com">Get in touch</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="panel footer">
+  <div class="footer-inner">
+    <p class="mono" style="margin:0">© 2026 Mohammadasnaf Shaikh</p>
+    <p class="mono" style="margin:0"><a href="index.html" style="text-decoration:none">← All work</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

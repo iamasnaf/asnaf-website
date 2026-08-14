@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammadasnaf Shaikh — Senior QA Automation Engineer</title>
+<meta name="description" content="Senior QA Automation Engineer with 9+ years across web, mobile, API and embedded. Playwright, CI/CD, and QA for AI-powered features.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <nav class="nav-inner" aria-label="Main">
+    <a class="nav-name" href="#top">Mohammadasnaf Shaikh</a>
+    <div class="nav-links">
+      <a href="#ai">AI QA</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero wrap">
+    <p class="status mono"><span class="dot" aria-hidden="true"></span>Open to Senior Automation Engineer / QA Automation Lead roles · Hamilton–Toronto · Onsite or Hybrid or remote</p>
+    <h1>I make quality the reason teams ship faster.</h1>
+    <p class="hero-sub">Senior QA Automation Engineer. 9+ years across web, mobile, API and embedded systems — currently building the test practice for AI-powered features at DocuPet.</p>
+    <div class="actions">
+      <a class="btn" href="#experience">See my experience</a>
+      <a class="btn btn-quiet" href="Mohammadasnaf_Shaikh_Resume.pdf">Download resume ↓</a>
+    </div>
+  </section>
+
+  <!-- ========== RUN STRIP ========== -->
+  <section class="panel strip-panel" aria-labelledby="strip-title">
+    <div class="wrap">
+      <div class="strip-head">
+        <p class="mono" id="strip-title" style="margin:0">Selected roles — 2020 → now</p>
+        <p class="mono dim" style="margin:0">4 spans · click to jump</p>
+      </div>
+
+      <div class="axis" aria-hidden="true">
+        <span class="tick" style="left:0%">2020</span>
+        <span class="tick" style="left:15%">2021</span>
+        <span class="tick" style="left:30%">2022</span>
+        <span class="tick" style="left:45%">2023</span>
+        <span class="tick" style="left:60%">2024</span>
+        <span class="tick" style="left:75%">2025</span>
+        <span class="tick" style="left:90%">2026</span>
+      </div>
+
+      <div class="tracks">
+        <div class="track">
+          <a class="span span-1" href="#role-ramp" style="left:1.25%; width:21.25%"><span>Ramp Group · GM IVI</span></a>
+          <span class="track-tag">Embedded</span>
+        </div>
+        <div class="track">
+          <a class="span span-2" href="#role-aceage" style="left:25%; width:10%"><span>AceAge</span></a>
+          <span class="track-tag">Medical device</span>
+        </div>
+        <div class="track">
+          <a class="span span-3" href="#role-prodly" style="left:35%; width:41.25%"><span>Prodly.co</span></a>
+          <span class="track-tag">Web / API</span>
+        </div>
+        <div class="track">
+          <a class="span span-4" href="#role-docupet" style="left:75%; width:25%"><span>DocuPet</span></a>
+          <span class="track-tag">Web / AI</span>
+        </div>
+      </div>
+
+      <p class="strip-note small">Span length is tenure, colour is domain. The last span has no right edge — still running.</p>
+    </div>
+  </section>
+
+  <!-- ========== IMPACT ========== -->
+  <section class="panel">
+    <div class="wrap">
+      <div class="impact">
+        <div class="impact-cell">
+          <p class="impact-num">60%+</p>
+          <p class="mono impact-label">Regression cycle reduction</p>
+          <p class="small dim" style="margin:0">Prodly.co, from zero automation</p>
+        </div>
+        <div class="impact-cell">
+          <p class="impact-num">200+</p>
+          <p class="mono impact-label">Automated test cases authored</p>
+          <p class="small dim" style="margin:0">Regression, integration, end-to-end</p>
+        </div>
+        <div class="impact-cell">
+          <p class="impact-num">4</p>
+          <p class="mono impact-label">Platform types tested</p>
+          <p class="small dim" style="margin:0">Web, mobile, API, embedded hardware</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI QA ========== -->
+  <section class="panel" id="ai">
+    <div class="section wrap reveal">
+      <div class="section-head">
+        <h2>How I test AI features</h2>
+        <p class="mono dim" style="margin:0">Practice</p>
+      </div>
+
+      <div class="ai-grid">
+        <div>
+          <p>Traditional test design assumes the same input produces the same output. AI-assisted features break that assumption, and most teams respond by either testing nothing or eyeballing responses until they look fine.</p>
+          <p>My approach is to make the variable parts explicit: fix everything around the model so a prompt change is the only thing that moved, keep a living corpus of inputs that have caused failures before, and define pass criteria in terms of properties rather than exact strings.</p>
+
+          <div class="practice">
+            <h3>Structured prompt templates</h3>
+            <p>A fixed harness around every prompt so that when output changes, the prompt is the only variable that could have caused it.</p>
+          </div>
+          <div class="practice">
+            <h3>Edge-case scenario libraries</h3>
+            <p>A maintained corpus of inputs that have broken something before — ambiguity, adversarial phrasing, empty and overlong inputs, domain edge cases.</p>
+          </div>
+          <div class="practice">
+            <h3>Output consistency checklists</h3>
+            <p>Explicit criteria that decide whether a response passes: required fields present, no fabricated entities, tone in range, refusal behaviour correct.</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="mono dim" style="margin-bottom:16px">Assertion pattern — sanitized</p>
+<pre class="artifact"><span class="k">scenario:</span>  user submits an ambiguous request
+<span class="k">fixture:</span>   locked model version, temperature, system prompt
+<span class="k">input:</span>     corpus/ambiguous/*.json          (48 cases)
+
+<span class="k">assert</span> response.schema            <span class="ok">valid</span>
+<span class="k">assert</span> response.entities ⊆ input.entities
+<span class="k">assert</span> response.contains_refusal  when input.out_of_scope
+<span class="k">assert</span> response.length            within 1..3 sentences
+<span class="k">assert</span> response.tone              in [neutral, helpful]
+
+<span class="k">gate:</span>      ≥ 46 / 48 pass  →  <span class="ok">promote</span>
+           &lt; 46 / 48 pass  →  block merge, diff vs baseline</pre>
+          <p class="small dim" style="margin-top:16px">The point is the gate. Without a threshold agreed in advance, "the output looks worse" is an opinion and nobody can act on it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAPABILITIES ========== -->
+  <section class="section wrap reveal">
+    <div class="section-head">
+      <h2>Capabilities</h2>
+      <p class="mono dim" style="margin:0">ISTQB CTFL · SAFe 5.1</p>
+    </div>
+
+    <div class="caps">
+      <div class="cap">
+        <h3>Automation</h3>
+        <ul>
+          <li>Playwright (TypeScript)</li>
+          <li>Cypress (JavaScript)</li>
+          <li>Selenium</li>
+          <li>Appium</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h3>API &amp; data</h3>
+        <ul>
+          <li>Postman</li>
+          <li>Swagger</li>
+          <li>REST · GraphQL</li>
+          <li>SQL · DBeaver</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h3>CI/CD &amp; cloud</h3>
+        <ul>
+          <li>GitHub Actions</li>
+          <li>Jenkins</li>
+          <li>AWS S3 · Allure</li>
+          <li>LambdaTest</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h3>AI / LLM</h3>
+        <ul>
+          <li>Prompt engineering</li>
+          <li>Context engineering</li>
+          <li>LLM output validation</li>
+          <li>Prompt regression testing</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mono caps-rest">Jira · Xray · Zephyr Scale · Confluence · Notion · Sentry · Datadog · Figma · Git · VS Code · Salesforce Admin · Accessibility (WCAG · Lighthouse) · TypeScript · JavaScript · Java · SQL · C++</p>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section wrap reveal" id="experience">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <p class="mono dim" style="margin:0">2020 → now</p>
+    </div>
+
+    <article class="role" id="role-docupet">
+      <div class="role-top">
+        <div>
+          <h3>Senior QA Engineer</h3>
+          <p class="role-co">DocuPet · Hamilton, ON</p>
+        </div>
+        <p class="mono dim" style="margin:0">Jan 2025 — Present</p>
+      </div>
+      <p>Own the end-to-end Playwright suite that runs on every pull request, replacing overnight cycles with same-day regression feedback. Introduced the prompt and context engineering practice used to validate the product's AI-assisted features.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Architected and maintain a Playwright (TypeScript) suite embedded in CI/CD, delivering regression results on every PR.</li>
+          <li>Built structured prompt templates, edge-case scenario libraries and LLM output consistency checklists for AI features.</li>
+          <li>Authored test plans covering functional, regression, sanity, accessibility (Lighthouse / WCAG) and non-functional testing across LambdaTest real-device environments.</li>
+          <li>Led API validation via Postman and Swagger — payload integrity, auth flows, error boundaries and data consistency across QA, Staging and Production.</li>
+          <li>Used Sentry for real-time log monitoring, surfacing production-level anomalies pre-release and reducing mean time to resolution.</li>
+          <li>Managed the full defect lifecycle in Jira / Xray and maintained the Confluence knowledge base used for onboarding.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="role" id="role-prodly">
+      <div class="role-top">
+        <div>
+          <h3>QA Engineer</h3>
+          <p class="role-co">Prodly.co · Hamilton, ON</p>
+        </div>
+        <p class="mono dim" style="margin:0">May 2022 — Feb 2025</p>
+      </div>
+      <p>Built the automation practice from an empty repo — framework, pipeline and reporting — cutting manual regression effort by more than 60% and enabling daily CI execution.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Built the entire automation framework from scratch in Playwright and Cypress (TypeScript / JavaScript) from a zero-automation baseline.</li>
+          <li>Deployed and maintained an AWS S3-hosted Allure reporting pipeline giving stakeholders self-serve visibility into execution trends, flakiness and coverage gaps.</li>
+          <li>Applied context engineering to AI-assisted test scenario generation for complex Salesforce features.</li>
+          <li>Served as Salesforce System Admin within QA — provisioned test environments, managed permissions, validated data migration accuracy.</li>
+          <li>Executed API testing on REST endpoints via Postman and Swagger, validating data correctness, response-time SLAs and error boundaries.</li>
+          <li>Used Datadog and DBeaver for log monitoring and SQL-based database validation.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="role" id="role-aceage">
+      <div class="role-top">
+        <div>
+          <h3>Software QA Tester</h3>
+          <p class="role-co">AceAge Inc. · Burlington, ON</p>
+        </div>
+        <p class="mono dim" style="margin:0">Sep 2021 — May 2022</p>
+      </div>
+      <p>Tested the Karie and cMed Plus mobile applications alongside the physical medication-dispensing hardware they control, across multiple international regions.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Tested Android and iOS applications plus hardware dispensing devices across QA, Staging and Production.</li>
+          <li>Executed update-path, firmware, regression, sanity, permission and multi-device dispensing tests.</li>
+          <li>Caught a critical patient-safety hardware–software sync defect before it reached production.</li>
+          <li>Performed API testing on healthcare platform endpoints, verifying prescription data flows and device communication protocols.</li>
+        </ul>
+      </details>
+    </article>
+
+    <article class="role" id="role-ramp">
+      <div class="role-top">
+        <div>
+          <h3>QA Analyst</h3>
+          <p class="role-co">Ramp Group Technology · Markham, ON</p>
+        </div>
+        <p class="mono dim" style="margin:0">Feb 2020 — Jul 2021</p>
+      </div>
+      <p>Test strategy and automation for General Motors in-vehicle infotainment systems, validated on the bench and in the vehicle.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Developed test strategies covering Bluetooth, CarPlay, Android Auto (wired and wireless), Radio, SiriusXM and media applications.</li>
+          <li>Built Java + Selenium + Appium automation targeting Android IVI.</li>
+          <li>Performed bench and in-vehicle validation using CAN bus and Intrepid simulated signals.</li>
+          <li>Collaborated with GM engineering on HMI usability; structured QA feedback entered the engineering backlog across two model-year updates.</li>
+        </ul>
+      </details>
+    </article>
+  </section>
+
+  <!-- ========== ABOUT + CONTACT ========== -->
+  <section class="section wrap reveal" id="about">
+    <div class="section-head">
+      <h2>About</h2>
+      <p class="mono dim" style="margin:0">Hamilton, ON</p>
+    </div>
+
+    <div class="about">
+      <img class="portrait" src="headshot.jpg" alt="Mohammadasnaf Shaikh" width="720" height="900">
+
+      <div>
+        <p>I started in QA on hardware — medication dispensers and in-vehicle infotainment, where a defect has a physical consequence and there's no hotfix. That shaped how I work: I care more about what a test proves than how many tests exist.</p>
+        <p>Since moving to web and API work I've built two automation practices from nothing, and I've spent the last year on the problem I find most interesting right now — how you test a feature whose output is different every time you run it. Most of the industry is still figuring this out. I'd like to keep working on it.</p>
+        <p>I'm looking for a Senior Automation Engineer or QA Automation Lead role on a team that treats quality as leverage rather than a gate at the end. Hamilton or Toronto, Onsite or Hybrid or Remote.</p>
+
+        <div class="contact" id="contact">
+          <a href="mailto:asnafshaikhpro@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/mohammadasnaf-shaikh/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="tel:+16473276415">+1 647 327 6415</a>
+          <a href="Mohammadasnaf_Shaikh_Resume.pdf">Resume PDF</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="panel footer">
+  <div class="footer-inner">
+    <p class="mono" style="margin:0">© 2026 Mohammadasnaf Shaikh</p>
+    <p class="mono" style="margin:0">WCAG 2.2 AA · Lighthouse 100 · Last updated Aug 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>

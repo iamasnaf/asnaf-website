@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing a car you can't unit-test — Mohammadasnaf Shaikh</title>
+<meta name="description" content="Test strategy and Java/Selenium/Appium automation for General Motors in-vehicle infotainment, validated on the bench and in the vehicle over CAN bus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Public+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <nav class="nav-inner" aria-label="Main">
+    <a class="nav-name" href="index.html">Mohammadasnaf Shaikh</a>
+    <div class="nav-links">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a class="nav-cta" href="index.html#contact">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="case-hero wrap">
+    <p class="mono dim" style="margin:0">Ramp Group Technology · 2020–2021 · Embedded</p>
+    <h1>Testing a car you can't unit-test</h1>
+    <p class="lede">In-vehicle infotainment for General Motors, where the system under test is a physical vehicle, half the inputs arrive over a CAN bus, and the user is driving. Automation had to work on a bench and in a driveway.</p>
+  </section>
+
+  <section class="wrap case-body">
+
+    <h2>Context</h2>
+    <p>IVI sits at an awkward intersection: it is an Android application, a piece of automotive electronics, and a safety-adjacent interface all at once. The surface I covered included Bluetooth pairing and call handling, Apple CarPlay, Android Auto in both wired and wireless modes, Radio, SiriusXM and media playback — each with its own protocol stack and its own failure modes.</p>
+
+    <h2>The problem</h2>
+    <p>Two constraints shape everything. First, you cannot mock the vehicle: the head unit reacts to signals from systems that only exist in a car, so a test that passes in isolation proves very little. Second, defects reach customers in a physical product on a model-year cycle, so the feedback loop measured in months rather than sprints and the cost of a miss was high.</p>
+
+    <h2>What I built</h2>
+    <p><strong>Test strategy across the feature surface.</strong> Coverage plans for each connectivity and media subsystem, structured around the state transitions that actually break — pairing during an active call, a phone disconnecting mid-route, switching sources while audio is routed elsewhere.</p>
+
+    <p><strong>Java, Selenium and Appium automation targeting Android IVI.</strong> Automating a head unit is not automating a phone: the element tree is unfamiliar, the hardware controls are outside the application, and timing is governed by systems the test cannot see. The framework had to tolerate that without turning every run into a flake investigation.</p>
+
+    <p><strong>Bench and in-vehicle validation.</strong> Using CAN bus signals and Intrepid simulated inputs, the bench setup could reproduce vehicle states — ignition, speed, gear position — without a car. I ran the same scenarios in-vehicle to confirm the bench was telling the truth, which is the part that makes bench results trustworthy rather than convenient.</p>
+
+    <p><strong>HMI usability feedback.</strong> I worked directly with GM engineering on interface behaviour, structuring QA observations so they could be triaged as backlog items rather than filed as opinions.</p>
+
+    <div class="todo">
+      <p class="mono" style="margin-bottom:8px">To add before publishing</p>
+      <p class="small">A photo of the bench setup, or a simple diagram of the signal path from Intrepid → CAN → head unit → test runner, would make this page. Check what you're permitted to show under any NDA before using anything real.</p>
+    </div>
+
+    <h2>Result</h2>
+    <ul>
+      <li>Structured QA feedback was incorporated into the GM engineering backlog across two successive model-year updates.</li>
+      <li>A repeatable bench methodology that let connectivity scenarios be validated without vehicle access, then confirmed in-vehicle.</li>
+      <li>Automation coverage on a platform where the default assumption was that automation wasn't feasible.</li>
+    </ul>
+
+    <h2>Why this still matters</h2>
+    <p>Most of what I do now is web and API work, but this is where I learned to ask what a test actually proves. When you cannot mock the environment and you cannot ship a hotfix, you stop counting test cases and start reasoning about which failures matter. That habit is the reason my suites stay small enough to maintain.</p>
+
+    <h2>Stack</h2>
+    <p class="mono dim">Java · Selenium · Appium · CAN bus · Intrepid · Android Auto · Apple CarPlay · Bluetooth · SiriusXM</p>
+
+    <div class="cta-block">
+      <h2>Want this for your team?</h2>
+      <p>I'm open to Senior QA and QA Lead roles in Hamilton, Toronto, or remote.</p>
+      <p style="margin-top:24px"><a class="btn" href="mailto:asnafshaikhpro@gmail.com">Get in touch</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="panel footer">
+  <div class="footer-inner">
+    <p class="mono" style="margin:0">© 2026 Mohammadasnaf Shaikh</p>
+    <p class="mono" style="margin:0"><a href="index.html" style="text-decoration:none">← All work</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
